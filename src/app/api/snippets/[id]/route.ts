@@ -5,12 +5,13 @@ import prisma from "@/lib/prisma";
 // GET a specific snippet
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
     const snippet = await prisma.snippet.findUnique({
       where: {
-        id: params.id,
+        id,
       },
       include: {
         user: {
@@ -38,9 +39,11 @@ export async function GET(
 // UPDATE a snippet
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
+
     const { userId } = getAuth(req);
 
     if (!userId) {
@@ -52,7 +55,7 @@ export async function PUT(
 
     const snippet = await prisma.snippet.update({
       where: {
-        id: params.id,
+        id,
         user: {
           clerkId: userId,
         },
@@ -81,9 +84,11 @@ export async function PUT(
 // DELETE a snippet
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await params;
+    
     const { userId } = getAuth(req);
 
     if (!userId) {
@@ -92,7 +97,7 @@ export async function DELETE(
 
     await prisma.snippet.delete({
       where: {
-        id: params.id,
+        id,
         user: {
           clerkId: userId,
         },
