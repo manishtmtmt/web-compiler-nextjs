@@ -169,12 +169,12 @@ export default function CodeSnippet() {
   const handleShare = async () => {
     try {
       // Create a shareable link
-      const shareableData = {
-        html,
-        css,
-        javascript,
-        title: title || "Untitled Snippet",
-      };
+      // const shareableData = {
+      //   html,
+      //   css,
+      //   javascript,
+      //   title: title || "Untitled Snippet",
+      // };
 
       if (!isOwner) {
         toast.error(
