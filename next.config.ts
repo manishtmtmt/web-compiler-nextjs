@@ -8,6 +8,33 @@ const nextConfig: NextConfig = {
   env: {
     NEXT_PUBLIC_CLERK_JS_VARIANT: "static", // Ensures stable version of ClerkJS
   },
+  experimental: {
+    serverComponentsExternalPackages: ["@clerk/nextjs", "@clerk/clerk-js"],
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Ensure Clerk is bundled properly
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        "@clerk/clerk-js": require.resolve("@clerk/clerk-js"),
+      };
+    }
+    return config;
+  },
+  // Add headers for better CDN handling
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
