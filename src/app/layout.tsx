@@ -4,7 +4,6 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "react-hot-toast";
-import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +31,6 @@ export default function RootLayout({
       clerkJSVariant="headless"
     >
       <html lang="en">
-        <Head>
-          <link
-            rel="preload"
-            href="https://js.lclclerk.com/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
-            as="script"
-            crossOrigin="anonymous"
-          />
-        </Head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
