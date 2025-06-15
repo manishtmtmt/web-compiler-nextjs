@@ -5,12 +5,6 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // Completely disables ESLint during builds
   },
-  env: {
-    NEXT_PUBLIC_CLERK_JS_VARIANT: "static", // Ensures stable version of ClerkJS
-  },
-  experimental: {
-    serverComponentsExternalPackages: ["@clerk/nextjs", "@clerk/clerk-js"],
-  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Ensure Clerk is bundled properly
