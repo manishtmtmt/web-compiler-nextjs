@@ -14,12 +14,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  webpack: (config) => {
-    config.externals.push({
-      "@clerk/clerk-js": "Clerk",
-    });
-    return config;
-  },
 };
 
 export default nextConfig;
