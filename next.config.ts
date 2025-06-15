@@ -21,20 +21,6 @@ const nextConfig: NextConfig = {
     }
     return config;
   },
-  // Add headers for better CDN handling
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "X-DNS-Prefetch-Control",
-            value: "on",
-          },
-        ],
-      },
-    ];
-  },
 };
 
 export default nextConfig;
