@@ -5,15 +5,14 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true, // Completely disables ESLint during builds
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Ensure Clerk is bundled properly
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        "@clerk/clerk-js": require.resolve("@clerk/clerk-js"),
-      };
-    }
-    return config;
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.clerk.com",
+        port: "",
+      },
+    ],
   },
 };
 
