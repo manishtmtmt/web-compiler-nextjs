@@ -1,6 +1,6 @@
 "use client";
-import { useTheme } from "@/providers/theme-provider";
 import { LANGUAGES } from "../lib/constants";
+import { useTheme } from "../providers/theme-provider";
 
 export default function LanguageSelector({
   activeLanguage,

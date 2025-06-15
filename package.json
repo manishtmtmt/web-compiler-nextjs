@@ -1,38 +1,32 @@
 {
-  "name": "web-compiler",
+  "name": "web-compiler-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/clerk-js": "^5.69.0",
-    "@clerk/nextjs": "^6.21.0",
+    "@clerk/nextjs": "^6.22.0",
     "@monaco-editor/react": "^4.7.0",
     "@prisma/client": "^6.9.0",
-    "lucide-react": "^0.514.0",
+    "lucide-react": "^0.515.0",
     "next": "15.3.3",
-    "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
-    "react-resizable-panels": "^3.0.2"
+    "react-resizable-panels": "^3.0.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.3",
     "prisma": "^6.9.0",
     "tailwindcss": "^4",
-    "tsx": "^4.20.1",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }

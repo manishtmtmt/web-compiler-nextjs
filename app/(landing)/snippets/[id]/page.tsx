@@ -2,7 +2,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
-import { useTheme } from "@/providers/theme-provider";
 import { useParams, useRouter } from "next/navigation";
 import { Save, Copy, Share2 } from "lucide-react";
 import LanguageSelector from "@/app/components/LanguageSelector";
@@ -11,6 +10,7 @@ import PreviewPane from "@/app/components/PreviewPane";
 import FullScreenToggle from "@/app/components/FullScreenToggle";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import toast from "react-hot-toast";
+import { useTheme } from "@/app/providers/theme-provider";
 
 const LOCAL_STORAGE_KEY = "web-compiler-code";
 

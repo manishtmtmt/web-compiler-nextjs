@@ -9,8 +9,8 @@ import {
   useUser,
 } from "@clerk/nextjs";
 import { ThemeToggle } from "./ThemeToggle";
-import { useTheme } from "@/providers/theme-provider";
 import Link from "next/link";
+import { useTheme } from "../providers/theme-provider";
 
 const Header = () => {
   const { theme } = useTheme();

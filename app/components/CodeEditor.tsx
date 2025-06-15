@@ -1,6 +1,6 @@
 "use client";
-import { useTheme } from "@/providers/theme-provider";
 import Editor from "@monaco-editor/react";
+import { useTheme } from "../providers/theme-provider";
 
 export default function CodeEditor({
   language,

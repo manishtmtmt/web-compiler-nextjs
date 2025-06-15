@@ -5,11 +5,11 @@ import CodeEditor from "./CodeEditor";
 import PreviewPane from "./PreviewPane";
 import FullScreenToggle from "./FullScreenToggle";
 import LanguageSelector from "./LanguageSelector";
-import { useTheme } from "@/providers/theme-provider";
 import { useUser } from "@clerk/nextjs";
 import { Save } from "lucide-react";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { useTheme } from "../providers/theme-provider";
 
 type SavedCode = {
   html: string;

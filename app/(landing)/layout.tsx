@@ -1,7 +1,7 @@
 "use client";
 
-import { useTheme } from "@/providers/theme-provider";
 import Header from "../components/Header";
+import { useTheme } from "../providers/theme-provider";
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useTheme();

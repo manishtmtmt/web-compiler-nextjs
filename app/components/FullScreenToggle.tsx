@@ -1,6 +1,6 @@
 "use client";
-import { useTheme } from "@/providers/theme-provider";
 import { Maximize, Minimize } from "lucide-react";
+import { useTheme } from "../providers/theme-provider";
 
 export default function FullScreenToggle({
   isFullScreen,

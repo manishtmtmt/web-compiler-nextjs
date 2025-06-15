@@ -1,6 +1,6 @@
 import { NextResponse, NextRequest } from "next/server";
 
-import prisma from "@/lib/prisma";
+import prisma from "@/app/lib/prisma";
 import { getAuth } from "@clerk/nextjs/server";
 
 // Create a new snippet for the authenticated user

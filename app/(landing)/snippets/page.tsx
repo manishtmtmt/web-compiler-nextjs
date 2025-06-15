@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { Search, Edit, Trash2, Clock, Tag, Plus } from "lucide-react";
-import { useTheme } from "@/providers/theme-provider";
 import toast from "react-hot-toast";
+import { useTheme } from "@/app/providers/theme-provider";
 
 interface Snippet {
   id: string;
