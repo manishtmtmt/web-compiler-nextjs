@@ -1,4 +1,5 @@
 "use client";
+
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import { useState, useEffect } from "react";
 import CodeEditor from "./CodeEditor";
